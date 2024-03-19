@@ -470,6 +470,7 @@ if __name__ == "__main__":
 
     parser = get_parser()
     #parser = Trainer.add_argparse_args(parser)
+    print(parser)
     parser = Trainer.from_argparse_args(parser)
     #parser = Trainer(**vars(parser))
     print("\n\nFoi\n\n")
