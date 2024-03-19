@@ -126,10 +126,10 @@ def get_parser(**parser_kwargs):
 
 def nondefault_trainer_args(opt):
     parser = argparse.ArgumentParser()
-    #parser = Trainer.add_argparse_args(parser) 
-    parser = Trainer.from_argparse_args(parser) 
+    parser = Trainer.add_argparse_args(parser) 
+    #parser = Trainer.from_argparse_args(parser) 
     args = parser.parse_args([])
-    print("\n\n\nFoi\n\n\n\n")
+    #print("\n\n\nFoi\n\n\n\n")
     return sorted(k for k in vars(args) if getattr(opt, k) != getattr(args, k))
 
 
@@ -468,7 +468,9 @@ if __name__ == "__main__":
     sys.path.append(os.getcwd())
 
     parser = get_parser()
-    parser = Trainer.add_argparse_args(parser)
+    #parser = Trainer.add_argparse_args(parser)
+    parser = Trainer.from_argparse_args(parser)
+    print("\n\nFoi\n\n")
 
     opt, unknown = parser.parse_known_args()
     if opt.name and opt.resume:
