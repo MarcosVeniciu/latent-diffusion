@@ -12,8 +12,8 @@ from functools import partial
 from PIL import Image
 
 from pytorch_lightning import seed_everything
-#from pytorch_lightning.trainer import Trainer # erro#1
-from pytorch_lightning import Trainer
+from pytorch_lightning.trainer import Trainer # erro#1
+#from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import ModelCheckpoint, Callback, LearningRateMonitor
 #from pytorch_lightning.utilities.distributed import rank_zero_only # esta desatualizado
 from lightning.pytorch.utilities import rank_zero_only
@@ -477,6 +477,7 @@ if __name__ == "__main__":
     parser = get_parser()
     parser = parser.parse_args()
 
+    #parser = Trainer.add_argparse_args(parser)
     parser = Trainer.add_argparse_args(parser)
     print("\n\nFoi\n\n")
 
