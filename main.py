@@ -478,6 +478,9 @@ if __name__ == "__main__":
     parser = parser.parse_args()
 
     #parser = Trainer.add_argparse_args(parser)
+    print(parser)
+    print()
+    print(parser.gpus)
     parser = Trainer(parser)
     print("\n\nFoi\n\n")
 
