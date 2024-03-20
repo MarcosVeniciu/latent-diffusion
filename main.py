@@ -477,11 +477,11 @@ if __name__ == "__main__":
     parser = get_parser()
     parser = parser.parse_args()
 
-    #parser = Trainer.add_argparse_args(parser)
-    print(parser)
-    print()
-    print(parser.gpus)
-    parser = Trainer(parser)
+    parser = Trainer.add_argparse_args(parser)
+    #print(parser)
+   # print()
+    #print(parser.gpus)
+    #parser = Trainer(parser)
     print("\n\nFoi\n\n")
 
     opt, unknown = parser.parse_known_args()
