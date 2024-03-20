@@ -469,10 +469,9 @@ if __name__ == "__main__":
     sys.path.append(os.getcwd())
 
     parser = get_parser()
+    args = parser.parse_args()
     #parser = Trainer.add_argparse_args(parser)
-    print(parser)
-    parser = Trainer.from_argparse_args(parser)
-    #parser = Trainer(**vars(parser))
+    parser = Trainer(parser)
     print("\n\nFoi\n\n")
 
     opt, unknown = parser.parse_known_args()
