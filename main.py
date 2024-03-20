@@ -478,7 +478,7 @@ if __name__ == "__main__":
     parser = parser.parse_args()
 
     #parser = Trainer.add_argparse_args(parser)
-    parser = Trainer.add_argparse_args(parser)
+    parser = Trainer(parser)
     print("\n\nFoi\n\n")
 
     opt, unknown = parser.parse_known_args()
