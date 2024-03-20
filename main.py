@@ -480,8 +480,8 @@ if __name__ == "__main__":
     sys.path.append(os.getcwd())
 
     parser = get_parser()
-    args = parser.parse_args()
-    parser = Trainer(args)
+    parser = parser.parse_args()
+    parser = Trainer(accelerator= "gpu")
     print("\n\nFoi\n\n")
 
     opt, unknown = parser.parse_known_args()
