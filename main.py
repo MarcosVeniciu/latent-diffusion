@@ -484,7 +484,7 @@ if __name__ == "__main__":
 
     parser = Trainer(
         #name = parser.name,
-        resume = parser.resume,
+        #resume = parser.resume,
         base = parser.base,
         train = parser.train,
         project = parser.project,
