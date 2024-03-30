@@ -485,9 +485,9 @@ if __name__ == "__main__":
     sys.path.append(os.getcwd())
 
     parser = get_parser()
-    parser = parser.parse_args()
+    #parser = parser.parse_args()
 
-    #parser = Trainer()#(**parser.__dict__)
+    parser = Trainer(**parser.__dict__)
         #name = parser.name,
         #resume = parser.resume,
         #base = parser.base,
