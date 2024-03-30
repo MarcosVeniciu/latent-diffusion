@@ -481,7 +481,7 @@ if __name__ == "__main__":
 
     parser = get_parser()
     parser = parser.parse_args()
-    trainer = Trainer.add_argparse_args(parser)#accelerator= "gpu")
+    parser = Trainer()
 
     opt, unknown = parser.parse_known_args()
     if opt.name and opt.resume:
