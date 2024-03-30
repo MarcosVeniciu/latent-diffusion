@@ -481,8 +481,20 @@ if __name__ == "__main__":
 
     parser = get_parser()
     parser = parser.parse_args()
-    #print(parser.accelerator)
-    parser = Trainer()
+
+    parser = Trainer(
+        name = parser.name,
+        resume = parser.resume,
+        base = parser.base,
+        train = parser.train,
+        project = parser.project,
+        debug = parser.debug,
+        seed = parser.seed,
+        postfix = parser.postfix,
+        logdir = parser.logdir,
+        scale_lr = parser.scale_lr,
+        #no-test = parser.no-test,
+    )
 
     opt, unknown = parser.parse_known_args()
     if opt.name and opt.resume:
