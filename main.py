@@ -484,6 +484,7 @@ if __name__ == "__main__":
     parser = get_parser()
     #parser = parser.parse_args()
     #args_train = parser.__dict__
+    '''
     print(parser)
     parser = Trainer(#**args_train)
         name = parser.name,
@@ -499,7 +500,7 @@ if __name__ == "__main__":
         gpus = parser.gpus,
         accelerator = parser.accelerator,
     )
-
+    '''
     opt, unknown = parser.parse_known_args()
     if opt.name and opt.resume:
         raise ValueError(
