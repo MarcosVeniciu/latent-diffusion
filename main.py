@@ -122,13 +122,13 @@ def get_parser(**parser_kwargs):
         default=True,
         help="scale base-lr by ngpu * batch_size * n_accumulate",
     )
-    '''
+    
     parser.add_argument(
         "--gpus",
         type=str,
         default=None,
         help="Lista separada por vírgula de índices de GPU para usar")
-    
+    '''
     parser.add_argument("--accelerator",
                         type=str,
                         default="gpu",
