@@ -129,12 +129,12 @@ def get_parser(**parser_kwargs):
         type=str,
         default=None,
         help="Lista separada por vírgula de índices de GPU para usar")
-    '''
+    
     parser.add_argument("--accelerator",
                         type=str,
                         default="gpu",
                         choices=["cpu", "gpu", "tpu", "mps"])  # Add supported choices
-    '''
+    
     return parser
 
 
@@ -484,24 +484,22 @@ if __name__ == "__main__":
     parser = get_parser()
     #parser = parser.parse_args()
     #args_train = parser.__dict__
-    #parser = Trainer(**args_train)
-        #name = parser.name,
-        #resume = parser.resume,
-        #base = parser.base,
-        #train = parser.train,
-        #project = parser.project,
-        #debug = parser.debug,
-        #seed = parser.seed,
-        #postfix = parser.postfix,
-        #logdir = parser.logdir,
-        #scale_lr = parser.scale_lr,
-        #gpus = parser.gpus,
-        #accelerator = parser.accelerator,
-    #)
+    parser = Trainer(#**args_train)
+        name = parser.name,
+        resume = parser.resume,
+        base = parser.base,
+        train = parser.train,
+        project = parser.project,
+        debug = parser.debug,
+        seed = parser.seed,
+        postfix = parser.postfix,
+        logdir = parser.logdir,
+        scale_lr = parser.scale_lr,
+        gpus = parser.gpus,
+        accelerator = parser.accelerator,
+    )
 
     opt, unknown = parser.parse_known_args()
-    print("\n\n\n\n\n OI \n\n")
-    print(opt)
     if opt.name and opt.resume:
         raise ValueError(
             "-n/--name and -r/--resume cannot be specified both."
