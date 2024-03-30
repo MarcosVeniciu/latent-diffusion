@@ -483,7 +483,7 @@ if __name__ == "__main__":
     parser = parser.parse_args()
 
     parser = Trainer(
-        name = parser.name,
+        #name = parser.name,
         resume = parser.resume,
         base = parser.base,
         train = parser.train,
