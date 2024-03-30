@@ -123,17 +123,17 @@ def get_parser(**parser_kwargs):
         help="scale base-lr by ngpu * batch_size * n_accumulate",
     )
     
-    parser.add_argument(
+    parser.add_argument(# eu adiiconei
         "--gpus",
         type=str,
         default=None,
         help="Lista separada por vírgula de índices de GPU para usar")
-    '''
+    
     parser.add_argument("--accelerator",
                         type=str,
                         default="gpu",
                         choices=["cpu", "gpu", "tpu", "mps"])  # Add supported choices
-    '''
+    
     return parser
 
 
@@ -489,12 +489,13 @@ if __name__ == "__main__":
         #base = parser.base,
         #train = parser.train,
         #project = parser.project,
-        debug = parser.debug,
+        #debug = parser.debug,
         seed = parser.seed,
         postfix = parser.postfix,
         logdir = parser.logdir,
         scale_lr = parser.scale_lr,
-        #no-test = parser.no-test,
+        gpus = parser.gpus,
+        accelerator = parser.accelerator,
     )
 
     opt, unknown = parser.parse_known_args()
