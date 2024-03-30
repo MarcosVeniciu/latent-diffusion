@@ -127,12 +127,12 @@ def get_parser(**parser_kwargs):
         type=str,
         default=None,
         help="Lista separada por vírgula de índices de GPU para usar")
-
+    '''
     parser.add_argument("--accelerator",
                         type=str,
                         default="gpu",
                         choices=["cpu", "gpu", "tpu", "mps"])  # Add supported choices
-
+    '''
     return parser
 
 
