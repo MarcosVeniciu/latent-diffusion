@@ -490,7 +490,7 @@ if __name__ == "__main__":
         #train = parser.train,
         #project = parser.project,
         #debug = parser.debug,
-        seed = parser.seed,
+        #seed = parser.seed,
         postfix = parser.postfix,
         logdir = parser.logdir,
         scale_lr = parser.scale_lr,
