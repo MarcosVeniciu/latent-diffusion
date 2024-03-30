@@ -138,7 +138,7 @@ def get_parser(**parser_kwargs):
     return parser
 
 
-def nondefault_trainer_args(opt):
+def nondefault_trainer_args(opt): # Erro #2
     parser = argparse.ArgumentParser()
     #parser = Trainer.add_argparse_args(parser) 
     #parser = Trainer.from_argparse_args(parser) 
