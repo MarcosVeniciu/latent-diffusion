@@ -492,7 +492,7 @@ if __name__ == "__main__":
         #debug = parser.debug,
         #seed = parser.seed,
         #postfix = parser.postfix,
-        logdir = parser.logdir,
+        #logdir = parser.logdir,
         scale_lr = parser.scale_lr,
         gpus = parser.gpus,
         accelerator = parser.accelerator,
