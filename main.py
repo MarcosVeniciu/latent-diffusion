@@ -484,6 +484,7 @@ if __name__ == "__main__":
     parser = get_parser()
     #parser = parser.parse_args()
     #args_train = parser.__dict__
+    print(parser.name)
     parser = Trainer(#**args_train)
         name = parser.name,
         resume = parser.resume,
