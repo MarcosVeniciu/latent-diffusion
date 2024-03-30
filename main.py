@@ -46,6 +46,7 @@ def get_parser(**parser_kwargs):
         help="postfix for logdir",
     )
     '''
+    '''
     parser.add_argument(
         "-r",
         "--resume",
@@ -55,6 +56,7 @@ def get_parser(**parser_kwargs):
         nargs="?",
         help="resume from logdir or checkpoint in logdir",
     )
+    '''
     parser.add_argument(
         "-b",
         "--base",
