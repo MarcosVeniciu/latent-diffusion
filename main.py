@@ -705,8 +705,9 @@ if __name__ == "__main__":
 
         #trainer = Trainer.from_argparse_args(trainer_opt, **trainer_kwargs)
         print("\n\n\n")
-        print(trainer_opt)
-        trainer = Trainer(trainer_opt, **trainer_kwargs)
+        print(trainer_config)
+        #trainer = Trainer(trainer_opt, **trainer_kwargs)
+        trainer = Trainer(trainer_config, **trainer_kwargs)
         trainer.logdir = logdir  ###
 
         # data
