@@ -704,6 +704,8 @@ if __name__ == "__main__":
         trainer_kwargs["callbacks"] = [instantiate_from_config(callbacks_cfg[k]) for k in callbacks_cfg]
 
         #trainer = Trainer.from_argparse_args(trainer_opt, **trainer_kwargs)
+        print("\n\n\n")
+        print(trainer_opt)
         trainer = Trainer(trainer_opt, **trainer_kwargs)
         trainer.logdir = logdir  ###
 
