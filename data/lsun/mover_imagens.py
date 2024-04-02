@@ -9,4 +9,4 @@ def abrir_diretorio(dir):
 		
 		
 
-abir_diretorio(base)
+abrir_diretorio(base)
