@@ -1,7 +1,7 @@
 import os
 
 
-base = "imgs"
+base = "churches/imgs"
 
 def abrir_diretorio(dir):
 	for item in os.listdir(dir):
