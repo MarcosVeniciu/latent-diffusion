@@ -311,9 +311,14 @@ class ImageLogger(Callback):
         self.rescale = rescale
         self.batch_freq = batch_frequency
         self.max_images = max_images
+       # self.logger_log_images = {
+       #     pl.loggers.TestTubeLogger: self._testtube,
+       # }
+
         self.logger_log_images = {
-            pl.loggers.TestTubeLogger: self._testtube,
+            'WandbLogger': self._wandb,
         }
+        
         self.log_steps = [2 ** n for n in range(int(np.log2(self.batch_freq)) + 1)]
         if not increase_log_steps:
             self.log_steps = [self.batch_freq]
@@ -333,6 +338,13 @@ class ImageLogger(Callback):
             pl_module.logger.experiment.add_image(
                 tag, grid,
                 global_step=pl_module.global_step)
+
+    def _wandb(self, pl_module, images, batch_idx, split):
+        for k, image in images.items():
+            try:
+                pl_module.logger.experiment.log({f"{split}/{k}": [wandb.Image(image)]}, step=pl_module.global_step)
+            except wandb.errors.Error as e:
+                print(f"Error logging image to Wandb: {e}")
 
     @rank_zero_only
     def log_local(self, save_dir, split, images,
