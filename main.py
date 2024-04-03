@@ -768,8 +768,8 @@ if __name__ == "__main__":
         # run
         if opt.train:
             try:
-                #trainer.fit(model, data)
-                print("\n\n Treinamento iniciado!!\n\n\n")
+                trainer.fit(model, data)
+                #print("\n\n Treinamento iniciado!!\n\n\n")
             except Exception:
                 melk()
                 raise
