@@ -1,16 +1,25 @@
 import os
 
 
-base = "churches/imgs"
+cont = 0
 
-def abrir_diretorio(dir):
-	print(os.listdir(dir))
-	for item in os.listdir(dir):
-		novo_dir = dir + "/" + item
-		print(item)
-		abrir_diretorio(novo_dir)
-		
-		
-		
+def sub_pasta(dir):
+    global cont
+    if cont == 50000: print(cont)
+    if cont == 100000: print(cont)
+    if cont == 120000: print(cont)
+    
+    lista = os.listdir(dir)
+    for item in lista:
+        if item[len(item)-4:] == "webp":
+            origem = os.path.join(dir, item)
+            destino = os.path.join("churches", item)
+            os.rename(origem, destino)
+            cont = cont +1
+        else:
+            sub_pasta(os.path.join(dir, item))
+    
 
-abrir_diretorio(base)
+diretorio = "churches"
+sub_pasta(diretorio)
+print(cont)
