@@ -14,10 +14,10 @@ def sub_pasta(dir):
         if item[len(item)-4:] == "webp":
             origem = os.path.join(dir, item)
             destino = os.path.join("churches", item)
-            print(origem)
-            print(destino)
-            print("\n\n")
-            #os.rename(origem, destino)
+            #print(origem)
+            #print(destino)
+            #print("\n\n")
+            os.rename(origem, destino)
             cont = cont +1
         else:
             sub_pasta(os.path.join(dir, item))
