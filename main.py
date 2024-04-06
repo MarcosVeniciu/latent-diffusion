@@ -766,9 +766,9 @@ if __name__ == "__main__":
         signal.signal(signal.SIGUSR2, divein)
 
         # Assumindo que 'trainer.device' contém as informações do dispositivo
-        device = trainer.devices[0]#trainer.accelerator.device
-        if device.is_cuda:
-            torch.cuda.reset_peak_memory_stats(device.index)
+        #device = trainer.devices[0]#trainer.accelerator.device
+        #if device.is_cuda:
+        #    torch.cuda.reset_peak_memory_stats(device.index)
 
         # run
         if opt.train:
