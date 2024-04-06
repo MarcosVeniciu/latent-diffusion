@@ -143,7 +143,6 @@ def nondefault_trainer_args(opt): # Erro #2
     #parser = Trainer.add_argparse_args(parser) 
     #parser = Trainer.from_argparse_args(parser) 
     args = parser.parse_args([])
-    #print("\n\n\nFoi\n\n\n\n")
     return sorted(k for k in vars(args) if getattr(opt, k) != getattr(args, k))
 
 
@@ -772,7 +771,6 @@ if __name__ == "__main__":
         if opt.train:
             try:
                 trainer.fit(model, data)
-                #print("\n\n Treinamento iniciado!!\n\n\n")
             except Exception:
                 melk()
                 raise
