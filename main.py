@@ -770,8 +770,7 @@ if __name__ == "__main__":
         else:
             device = torch.device("cpu")
         
-        if device.is_cuda:
-            torch.cuda.reset_peak_memory_stats(device)
+        torch.cuda.reset_peak_memory_stats(device)
 
         # run
         if opt.train:
