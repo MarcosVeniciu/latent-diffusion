@@ -766,11 +766,9 @@ if __name__ == "__main__":
         signal.signal(signal.SIGUSR2, divein)
 
         if torch.cuda.is_available():
-            device = torch.device("cuda")
-        else:
-            device = torch.device("cpu")
-        
-        torch.cuda.reset_peak_memory_stats(device)
+            root_gpu = trainer.strategy.root_device
+            torch.cuda.reset_peak_memory_stats(root_gpu)
+
 
         # run
         if opt.train:
