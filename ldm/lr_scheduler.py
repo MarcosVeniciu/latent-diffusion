@@ -33,12 +33,12 @@ class LambdaWarmUpCosineScheduler:
         return self.schedule(n,**kwargs)
 
 
-class LambdaWarmUpCosineScheduler2: # Aparentemente não foi chamado durante o treinamento
+class LambdaWarmUpCosineScheduler2:
     """
     supports repeated iterations, configurable via lists
     note: use with a base_lr of 1.0.
     """
-    def __init__(self, warm_up_steps, f_min, f_max, f_start, cycle_lengths, verbosity_interval=0):
+    def __init__(self, warm_up_steps, f_min, f_max, f_start, cycle_lengths, verbosity_interval=0): # ele passa no init
         assert len(warm_up_steps) == len(f_min) == len(f_max) == len(f_start) == len(cycle_lengths)
         self.lr_warm_up_steps = warm_up_steps
         self.f_start = f_start
@@ -86,7 +86,7 @@ class LambdaWarmUpCosineScheduler2: # Aparentemente não foi chamado durante o t
 class LambdaLinearScheduler(LambdaWarmUpCosineScheduler2):
 
     def schedule(self, n, **kwargs):
-        print("\n\nOI schedule")# segundo teste. Ela foi chamada durante o treinamento
+        #print("\n\nOI schedule")# Ele usa esse schedule
         cycle = self.find_in_interval(n)
         n = n - self.cum_cycles[cycle]
         if self.verbosity_interval > 0:
