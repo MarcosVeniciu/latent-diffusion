@@ -48,6 +48,7 @@ class LambdaWarmUpCosineScheduler2:
         self.cum_cycles = np.cumsum([0] + list(self.cycle_lengths))
         self.last_f = 0.
         self.verbosity_interval = verbosity_interval
+        print("\n\n oi Init\n\n")
 
     def find_in_interval(self, n):
         interval = 0
@@ -55,8 +56,10 @@ class LambdaWarmUpCosineScheduler2:
             if n <= cl:
                 return interval
             interval += 1
+        print("\n\nOi Find intervalo\n\n")
 
     def schedule(self, n, **kwargs):
+        print("\n\n Oi schedule\n\n")
         cycle = self.find_in_interval(n)
         n = n - self.cum_cycles[cycle]
         if self.verbosity_interval > 0:
@@ -73,8 +76,10 @@ class LambdaWarmUpCosineScheduler2:
                     1 + np.cos(t * np.pi))
             self.last_f = f
             return f
+        
 
     def __call__(self, n, **kwargs):
+        print("\n\n OI call\n\n")
         return self.schedule(n, **kwargs)
 
 
