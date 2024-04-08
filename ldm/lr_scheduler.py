@@ -86,6 +86,7 @@ class LambdaWarmUpCosineScheduler2:
 class LambdaLinearScheduler(LambdaWarmUpCosineScheduler2):
 
     def schedule(self, n, **kwargs):
+        print("\n\nOI schedule")
         cycle = self.find_in_interval(n)
         n = n - self.cum_cycles[cycle]
         if self.verbosity_interval > 0:
