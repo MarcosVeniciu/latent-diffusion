@@ -17,6 +17,11 @@ def custom_to_pil(x):
     x = torch.clamp(x, -1., 1.)
     x = (x + 1.) / 2.
     x = x.permute(1, 2, 0).numpy()
+    print("\nEstatisticas descritivas dos valores dos pixels:")
+    print(f"Mínimo: {x.min()}")
+    print(f"Máximo: {x.max()}")
+    print(f"Média: {x.mean()}")
+    print(f"Desvio Padrão: {x.std()}\n")
     x = (255 * x).astype(np.uint8)
     x = Image.fromarray(x)
     if not x.mode == "RGB":
