@@ -88,5 +88,5 @@ lightning:
 
 
   trainer:
-    max_epochs: 240
+    max_epochs: 15
     benchmark: True
