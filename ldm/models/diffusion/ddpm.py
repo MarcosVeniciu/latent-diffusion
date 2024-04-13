@@ -1381,7 +1381,7 @@ class LatentDiffusion(DDPM):
             print('Diffusion model optimizing logvar')
             params.append(self.logvar)
         opt = torch.optim.AdamW(params, lr=lr)
-        '''
+        
         if self.use_scheduler:
             assert 'target' in self.scheduler_config
             scheduler = instantiate_from_config(self.scheduler_config)
@@ -1389,12 +1389,12 @@ class LatentDiffusion(DDPM):
             print("Setting up LambdaLR scheduler...")
             scheduler = [
                 {
-                    'scheduler': LambdaLR(opt, lr_lambda=scheduler.schedule),
+                    'scheduler': LambdaLR(opt, lr_lambda=lambda epoch: 0.95 ** epoch),#scheduler.schedule),
                     'interval': 'step',
                     'frequency': 1
                 }]
             return [opt], scheduler
-        '''
+        
         return opt
 
     @torch.no_grad()
