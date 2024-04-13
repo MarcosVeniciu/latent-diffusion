@@ -74,6 +74,11 @@ class DDPM(pl.LightningModule):
                  logvar_init=0.,
                  ):
         super().__init__()
+
+
+        print("\n\n\nANALISE DO MODELO DDPM\n\n\n")
+
+
         assert parameterization in ["eps", "x0"], 'currently only supporting "eps" and "x0"'
         self.parameterization = parameterization
         print(f"{self.__class__.__name__}: Running in {self.parameterization}-prediction mode")
@@ -91,6 +96,8 @@ class DDPM(pl.LightningModule):
             self.model_ema = LitEma(self.model)
             print(f"Keeping EMAs of {len(list(self.model_ema.buffers()))}.")
 
+
+        print("     Init: scheduler_config >> \n                " + str(scheduler_config))
         self.use_scheduler = scheduler_config is not None
         if self.use_scheduler:
             self.scheduler_config = scheduler_config
