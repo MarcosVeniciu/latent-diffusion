@@ -97,7 +97,7 @@ class DDPM(pl.LightningModule):
             print(f"Keeping EMAs of {len(list(self.model_ema.buffers()))}.")
 
 
-        print("     Init: scheduler_config >> \n                " + str(scheduler_config))
+        print("\n\n     Init: scheduler_config >> \n                " + str(scheduler_config) + "\n\n")
         self.use_scheduler = scheduler_config is not None
         if self.use_scheduler:
             self.scheduler_config = scheduler_config
@@ -1370,6 +1370,7 @@ class LatentDiffusion(DDPM):
                 return {key: log[key] for key in return_keys}
         return log
 
+
     def configure_optimizers(self):
         lr = self.learning_rate
         params = list(self.model.parameters())
@@ -1380,6 +1381,7 @@ class LatentDiffusion(DDPM):
             print('Diffusion model optimizing logvar')
             params.append(self.logvar)
         opt = torch.optim.AdamW(params, lr=lr)
+        '''
         if self.use_scheduler:
             assert 'target' in self.scheduler_config
             scheduler = instantiate_from_config(self.scheduler_config)
@@ -1392,6 +1394,7 @@ class LatentDiffusion(DDPM):
                     'frequency': 1
                 }]
             return [opt], scheduler
+        '''
         return opt
 
     @torch.no_grad()
