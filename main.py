@@ -595,7 +595,7 @@ if __name__ == "__main__":
                 "params": {
                     "name": nowname,
                     "save_dir": logdir,
-                    "offline": True, #opt.debug,
+                    "offline": True, #opt.debug, # pretendo usar o WandbLogger apenas ofiline, para não precisar de uma conta.
                     "id": nowname,
                 }
             },
