@@ -595,7 +595,7 @@ if __name__ == "__main__":
                 "params": {
                     "name": nowname,
                     "save_dir": logdir,
-                    "offline": False, #opt.debug,
+                    "offline": True, #opt.debug,
                     "id": nowname,
                 }
             },
