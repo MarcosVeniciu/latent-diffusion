@@ -21,6 +21,7 @@ class LitEma(nn.Module):
                 self.register_buffer(s_name,p.clone().detach().data)
 
         self.collected_params = []
+        print("\n\nOI EMA\n\n")
 
     def forward(self,model):
         decay = self.decay
